@@ -12,10 +12,10 @@ owner:
   avatar:         bio-photo.jpg
   email:          kpeatt@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        https://www.twitter.com/kpeatt
+  twitter:        kpeatt
   facebook:
-  github:         http://www.github.com/kpeatt
-  stackexchange:  http://stackoverflow.com/users/1757952/kpeatt
+  github:         kpeatt
+  stackexchange:  
   linkedin:
   instagram:
   flickr:
