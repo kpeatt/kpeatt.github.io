@@ -1,10 +1,10 @@
 title:            Kyle Peatt's Blog
 description:      'Kyle Peatt is an Interaction Designer in Vancouver, BC.'
 logo:             site-logo.png
-disqus_shortname:
+disqus_shortname: kpeatt
 search:           true
 #Change url to your domain. Leave localhost server or blank when working locally.
-url:              http://localhost:4000
+url:              http://blog.kylepeatt.com
 
 # Owner/author information
 owner:
@@ -15,7 +15,7 @@ owner:
   twitter:        https://www.twitter.com/kpeatt
   facebook:
   github:         http://www.github.com/kpeatt
-  stackexchange:
+  stackexchange:  http://stackoverflow.com/users/1757952/kpeatt
   linkedin:
   instagram:
   flickr:
@@ -36,8 +36,6 @@ links:
     url: /about
   - title: Articles
     url: /articles
-  - title: Theme Setup
-    url: /theme-setup
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
