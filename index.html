@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<section class="about">
+    <h1 hidden>About Kyle Peatt</h1>
+
+    <p class="about__text">Kyle is an <a class="about__link" href="/work">interaction designer</a> and <a class="about__link" href="http://www.github.com/{{ site.github_username }}">front-end developer</a> living in <a class="about__link" href="#">Vancouver, Canada</a>. He manages the design team at <a class="about__link" href="#">Mobify</a>. He <a class="about__link" href="/writing">writes and speaks</a> about the web. But mostly, he <a class="about__link" href="#">listens to music</a>, <a class="about__link" href="#">plays videogames</a>, and likes to <a class="about__link" href="#">read a lot</a>.</p>
+</section>
+
+{% assign featuredwork = '0' %}
+{% for post in site.work %}
+    {% if featuredwork == '0' and post.featured %}
+    {% assign featuredwork = featuredwork | plus:'1' %}
+
+<section class="featured featured--work featured--{{ post.featured__class }}">
+    <div class="featured__content">
+        <h1 class="featured__subhead">Featured Work</h1>
+        <h2 class="featured__title">
+            <a href="{{ post.url }}" title="Read the case study on {{ post.title }}">
+                {{ post.title }}
+            </a>
+        </h2>
+        <p class="featured__excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+        <div class="button-group">
+            <a href="{{ post.url }}" class="button button--primary" title="Read more about the {{ post.title }} project">Tell me more</a>
+            <a href="/work" class="button button--secondary" title="See Kyle's other work">See other projects</a>
+        </div>
+    </div>
+    <a href="{{ post.url }}" class="featured__image" style="background-color: {{ post.featured_img_color }}; background-image: url(/assets/img/work/{{ post.featured_img }});">
+        <img src="/assets/img/work/{{ post.featured_img_mobile }}" alt="{{ post.featured_img_alt }}" width="406" height="466">
+    </a>
+</section>
+
+    {% endif %}
+{% endfor %}
+
+{% assign featuredwriting = '0' %}
+{% for post in site.posts %}
+    {% if featuredwriting == '0' and post.featured %}
+        {% assign featuredwriting = featuredwriting | plus:'1' %}
+    {% endif %}
+
+<section class="featured featured--writing featured--{{ post.featured__class }}">
+    {% if post.external_url %}
+        {% assign external = true %}
+        {% assign postUrl = post.external_url %}
+    {% else %}
+        {% assign postURL = post.url %}
+    {% endif %}
+    <div class="featured__content">
+        <h1 class="featured__subhead">Featured Writing</h1>
+        <h2 class="featured__title">
+            <a href="{{ postUrl }}" title="Read the article on {{ post.title }}">
+                {{ post.title }}
+                {% if external %}<img src="{{ post.external_logo %}}" alt="{{ post.external_name }}" class="featured__external-logo">{% endif %}
+            </a>
+        </h2>
+        <p class="featured__excerpt">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</p>
+        <div class="button-group">
+            <a href="{{ postUrl }}" class="button button--primary" title="Read the entire article">Read the article</a>
+            <a href="/writing" class="button button--secondary" title="See Kyle's other writing">See other writing</a>
+        </div>
+    </div>
+    <a href="{{ post.url }}" class="featured__image" style="background-color: {{ post.featured_img_color }}; background-image: url(/assets/img/writing/{{ post.featured_img }});">
+        <img src="/assets/img/writing/{{ post.featured_img_mobile }}" alt="{{ post.featured_img_alt }}" width="406" height="466">
+    </a>
+</section>
+{% endfor %}
+

@@ -1,0 +1,30 @@
+.button {
+    @extend .c-button;
+
+    min-height: 44px;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.button--primary {
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid $dark-red;
+
+    background: $red;
+
+    &:active {
+        background: $dark-red;
+    }
+}
+
+.button--secondary {
+    border: 2px solid $light-blue;
+
+    color: $light-blue;
+
+    &:active {
+        background: rgba($light-blue, 0.15);
+
+        color: $light-blue;
+    }
+}

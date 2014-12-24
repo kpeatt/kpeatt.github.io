@@ -1,0 +1,21 @@
+# Site settings
+title: Kyle Peatt Interaction Design
+email: kpeatt@gmail.com
+description: >
+  Kyle Peatt is an interaction designer and front-end developer.
+  He lives in Vancouver, Canada. Kyle works at Mobify helping companies
+  deliver the best e-commerce experiences to their customers.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://kpeatt.github.io" # the base hostname & protocol for your site
+twitter_username: kpeatt
+github_username:  kpeatt
+
+# Build settings
+markdown: kramdown
+
+collections:
+    work:
+        output: true
+        permalink: /work/:path/
+
+excerpt_separator: <!--more-->

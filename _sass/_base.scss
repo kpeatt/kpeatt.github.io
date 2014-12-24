@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 75%;
+
+    @include media-query(480px) {
+        font-size: 80%;
+    }
+
+    @include media-query(560px) {
+        font-size: 100%;
+    }
+
+    @include media-query(768px) {
+        font-size: 110%;
+    }
+
+    @include media-query(1024px) {
+        font-size: 125%;
+    }
+}
+
+body {
+    margin: 0;
+
+    background: $background-color;
+
+    color: $text-color;
+    font-family: $base-font-family;
+    line-height: $base-line-height;
+    hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $sans-serif;
+}

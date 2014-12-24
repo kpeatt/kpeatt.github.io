@@ -1,0 +1,80 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+@import "../bower_components/spline/dist/spline";
+
+// Our variables
+
+$serif: 'Chronicle Deck A', 'Chronicle Deck B', Georgia, serif;
+$sans-serif: 'Gotham A', 'Gotham B', Helvetica, Arial, sans-serif;
+$base-font-family: $serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$grey-90: #e7e2df;
+$grey-70: #bfbcba;
+$grey-40: #5d4c52;
+$grey-30: #4e303a;
+$grey-20: #352128;
+$grey-10: #1b131e;
+$white: #fcfafb;
+
+$light-yellow: #f8f7d6;
+
+$light-blue: #7ecdca;
+
+$red: #cc4726;
+$dark-red: #b03d21;
+
+$dark-gradient: linear-gradient($grey-10, $grey-30);
+
+$text-color: $grey-20;
+$background-color: $white;
+$brand-color:      #2a7ae2;
+
+// Button Variables
+
+$button-padding: rem(20) rem(20);
+$button-border: none;
+$button-border-radius: 0;
+$button-font-color: $white;
+$button-font-family: $sans-serif;
+$button-font-size: rem(20);
+
+
+
+// Using media queries with like this:
+// @include media-query($palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device, $dir: 'min') {
+    @media screen and (#{$dir}-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "../bower_components/mobify-stencil/dist/components/button/button",
+
+        "base",
+        "layout",
+        "syntax-highlighting",
+
+        "components/button",
+        "components/button-group",
+
+        "components/header",
+        "components/about",
+        "components/featured"
+;
